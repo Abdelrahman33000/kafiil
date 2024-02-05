@@ -680,11 +680,9 @@ button.btn1:active{
           if (isArabic) {
               $("p").text("هذا نص عينة باللغة العربية.");
           } else {
-              // تغيير اللغة للإنجليزية
               $("p").text("This is a sample text in English.");
           }
 
-          // تبديل اتجاه النصوص
           $("body").attr("dir", isArabic ? "rtl" : "ltr");
           $("#carousel-container").attr("dir", isArabic ? "ltr" : "rtl");
           $("nav").attr("dir", isArabic ? "ltr" : "ltr");
