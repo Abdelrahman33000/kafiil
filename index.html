@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Cards</title>
     <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
       body {
+        width: 100%;
+        outline:5px solid #000;
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -228,7 +231,7 @@ justify-content: center;
             position: relative;
             display: inline-block;
             margin-right: 10px;
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             box-shadow: 1px 1px 10px #cfcccc89, -1px -1px 10px #cfcccc84;
             padding: 20px;
             border-radius: 15px;
@@ -332,118 +335,6 @@ justify-content: center;
 
 
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px;
-            box-shadow: 3px 3px 15px #00000071;
-            position: relative;
-        }
-
-        .logo {
-            text-decoration: none;
-            font-size: 24px;
-        }
-
-        .menu {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color:#000;
-            font-size: 18px;
-            position: relative;
-        }
-        .menu a:hover{
-          color: #1dbf73;
-        }
-
-        .menu a i {
-            margin-right: 5px;
-
-        }
-
-        .profile-icon {
-            cursor: pointer;
-            position: relative;
-        }
-
-        .profile-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 10px;
-            width: 300px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 3;
-        }
-
-        .profile-dropdown a {
-            /* color: white; */
-
-            text-decoration: none !important;
-            display: block;
-            padding: 8px 0;
-            font-size: 16px;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: rgb(184, 41, 41);
-        }
-
-        .menu-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            flex-direction: column;
-            z-index: 1;
-            box-shadow: 3px 3px 15px #000000ae;
-        }
-        .menu-dropdown a{
-          text-decoration: none;
-          color: #000;
-          padding: 10px;
-        }
-        .menu-dropdown a:hover{
-          color: #1dbf73;
-        }
-
-        .menu-dropdown.show {
-            display: flex;
-        }
-
-        @media screen and (max-width: 768px) {
-            .menu {
-                display: none;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .menu a {
-                display: none;
-            }
-     
-        }
-
-
 
 
 
@@ -514,7 +405,12 @@ justify-content: center;
             color: #fff;
         }
 
-
+.dark-mode .menu a{
+  color: #e9f9f1;
+}
+.dark-mode .p{
+  color: #000;
+}
 @media (max-width: 900px) {
   .main{
   }
@@ -522,11 +418,17 @@ justify-content: center;
     margin: auto;
   }
 }
+
+
+
         
     </style>
   </head>
+
+  <!-- Start Body -->
+
   <body>
-    
+    <!-- Start  NavBar -->
     <nav>
       <a href="#" class="logo"><img src="/images/logo5.png" width="80px" alt=""></a>
       <div class="menu-icon" id="menuIcon">
@@ -576,18 +478,18 @@ justify-content: center;
             <div style="display: flex; align-items: center; gap: 10px;">
               <img src="/images/userprof.png" width="50px"  alt="">
               <div>
-                <p> 
+                <p class="p"> 
                 Ahmed Ali <br>
                  <span style="opacity: .7;">Student</span> </p>
               </div>
             </div>
 
 
-              <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/person.png" width="20px" alt=""> My Profile </a>
+              <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;;"><img src="/images/person.png" width="20px" alt=""> My Profile </a>
               <hr style="opacity: .5;">
 
               <div style="display: flex;justify-content: space-between;">
-                <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/mode.png" width="20px" alt=""> Dark Mode </a> 
+                <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;"><img src="/images/mode.png" width="20px" alt=""> Dark Mode </a> 
                 <div>
                     
 <label class="dark-mode-switch-label">
@@ -597,16 +499,14 @@ justify-content: center;
     </label>
 </label>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Check if dark mode is enabled in local storage
         const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
 
         setMode(isDarkMode);
 
         $('#darkModeToggle').change(function () {
-            // Toggle dark mode
             const darkModeEnabled = $(this).prop('checked');
             setMode(darkModeEnabled);
         });
@@ -621,17 +521,15 @@ justify-content: center;
             }
         }
     });
-</script>
+</script> -->
                   </div>
               </div>
-
-
              <div style="display: flex;justify-content: space-between;">
-               <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/language.png" width="20px" alt=""> Language </a> 
-               <p> العربية <img src="/images/arabic.png" width="20px" alt=""></p>
+               <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;"><img src="/images/language.png" width="20px" alt=""> Language </a> 
+               <p class="p"> العربية  <img src="/images/arabic.png" width="20px" alt=""></p>
              </div>
 
-              <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/setting.png" width="20px" alt=""> Account Settings </a>
+              <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;"><img src="/images/setting.png" width="20px" alt=""> Account Settings </a>
 
               <hr style="opacity: .5;">
               <a href="#" style="display: flex;align-items: center;gap: 3px; color:#f20e0e;"><img src="/images/logout.png" width="20px" alt=""> Logout</a>
@@ -639,8 +537,11 @@ justify-content: center;
           </div>
         </div>
     </nav>
-    
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- End NavBar  -->
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
             // Toggle menu for small screens
@@ -667,11 +568,11 @@ justify-content: center;
                 }
             });
         });
-    </script>
+    </script> -->
     
  
     <div style="display: flex; justify-content:space-between;margin:10px 70px; gap: 30px; flex-wrap: wrap;" class="main">
-        <div style="width: 60%;" class="main">
+        <div style="width:60%;" class="main">
             <main  >
            <p> Design / Logo Design </p>
        
@@ -710,12 +611,12 @@ justify-content: center;
 
           <div>
 
-            <div id="carousel-container">
+            <div id="carousel-container" >
               <button id="prev">&lt;</button>
               <div id="carousel">
-                  <img src="/images/slider.png" class="slide" style="width: 100%;">
-                  <img src="/images/slider.png" class="slide" style="width: 100%;">
-                  <img src="/images/slider.png" class="slide" style="width: 100%;">
+                  <img src="/images/slider.png" class="slide" style="width: fit-content;">
+                  <img src="/images/slider.png" class="slide" style="width: fit-content">
+                  <img src="/images/slider.png" class="slide" style="width: fit-content">
               </div>
               <button id="next">&gt;</button>
               <div id="dots-container">
@@ -812,7 +713,7 @@ justify-content: center;
                     <div class="checkbox-wrapper" style="display: flex;align-items: center; box-shadow: none;opacity: .8;">
                         <input type="checkbox" id="selectAll">
                         <label for="selectAll"></label>
-                        <div style="font-size: 17px; opacity: .7; margin-left: 10px;"> Select All </div>
+                        <div style="font-size: 17px; opacity: .7; margin-left: 10px;" class="p-d"> Select All </div>
                     </div>
                 </div>
             </div>
@@ -824,7 +725,7 @@ justify-content: center;
                             <input type="checkbox" name="items" id="item1" checked>
                             <label for="item1"></label>
                         </div>
-                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                        <p style="font-size: 20px;" class="p-d">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
                             ipsum
                             dolor sit amet, Lorem ipsum dolor sit amet.</p>
                     </div>
@@ -840,7 +741,7 @@ justify-content: center;
                             <input type="checkbox" name="items" id="item2">
                             <label for="item2"></label>
                         </div>
-                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                        <p style="font-size: 20px;" class="p-d">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
                             ipsum
                             dolor sit amet, Lorem ipsum dolor sit amet.</p>
                     </div>
@@ -856,7 +757,7 @@ justify-content: center;
                             <input type="checkbox" name="items" id="item3">
                             <label for="item3"></label>
                         </div>
-                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                        <p style="font-size: 20px;" class="p-d">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
                             ipsum
                             dolor sit amet, Lorem ipsum dolor sit amet.</p>
                     </div>
@@ -879,7 +780,6 @@ justify-content: center;
     });
 </script>
             
-            </body>
             
 
 
@@ -1370,6 +1270,7 @@ justify-content: center;
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/js/card.js"></script>
+<script src="/js/navbar.js"></script>
 <script>
   $(document).ready(function() {
     const counter = $("#counter");
