@@ -21,10 +21,7 @@
 
       
 .card1 {
-  /* background: #fff; */
   margin: 0 1rem;
-  /* padding: 1rem; */
-  /* width: 100%; */
   border-radius: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +78,6 @@ button.btn1:active{
 .rating {
       display: flex;
       flex-direction: row-reverse;
-      /* font-size: 10px; */
       width: fit-content;
     }
 
@@ -140,27 +136,6 @@ button.btn1:active{
     }
   
 
-
-    /* #carousel-container {
-      position: relative;
-            width: 100%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        #carousel {
-            display: flex;
-            transition: transform 0.6s linear;
-            position: relative;
-        }
-
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            height: auto;
-display: flex;
-justify-content: center;
-        } */
 
         #carousel-container {
             position: relative;
@@ -562,12 +537,6 @@ justify-content: center;
 
   <body>
 
-
-
-  
-
-
-
     <!-- Start  NavBar -->
     <nav>
       <a href="#" class="logo"><img src="/images/logo5.png" width="80px" alt=""></a>
@@ -652,18 +621,12 @@ justify-content: center;
     <!-- End NavBar  -->
 
 
-
- 
-    
- 
     <div  class="container"  >
-        <div   class="left-column">>
+        <div   class="left-column">
             <main  >
-           <p> Design / Logo Design </p>
-       
+           <p> Design / Logo Design </p>  
             <p style="font-size: 20px; font-weight: bold;" >  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, </p>
-
-            <div class="card1" style="display: flex; justify-content: space-between; ">
+      <div class="card1" style="display: flex; justify-content: space-between; ">
              <div style="display: flex; align-items: center;">
               <div>
                 <span onclick="gfg(1)"
@@ -687,43 +650,13 @@ justify-content: center;
                       4.1 (500)
                  </h3>
              </div>
-
-
                 <div><img src="/images/share.png" alt="" style="width: 30px; margin-right: 20px; ">
                   <i id="heart" class="far fa-heart fa-3x" style="font-size: 30px;"></i>
                 </div>
           </div>
 
-          <div>
 
-
-
-
-
-
-        
-<!-- <div id="myCarousel">
-  <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="/images/card.png" alt="Image 1">
-      </div>
-      <div class="carousel-item">
-          <img src="/images/card.png"  alt="Image 2">
-      </div>
-      <div class="carousel-item">
-          <img src="/images/card.png"  alt="Image 3">
-      </div>
-  </div>
-  <a class="carousel-control-prev" href="#" role="button" onclick="prevSlide()">
-      &#9664;
-  </a>
-  <a class="carousel-control-next" href="#" role="button" onclick="nextSlide()">
-      &#9654;
-  </a>
-</div> -->
-
-
-
+<!-- Start carousel -->
 <div id="carousel-container">
   <button id="prev">&lt;</button>
   <div class="carousel-inner">
@@ -745,168 +678,19 @@ justify-content: center;
   </div>
 </div>
 
-<!-- <script>
-  let currentIndex = 0;
-  const totalSlides = $("#carousel-container .carousel-item").length;
+<!-- End carousel -->
 
-  function showSlide(index) {
-      const translateValue = -100 * index + "%";
-      $("#carousel-container .carousel-inner").css("transform", "translateX(" + translateValue + ")");
-  }
-
-  function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      showSlide(currentIndex);
-  }
-
-  function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      showSlide(currentIndex);
-  }
-
-  function setDotActive(index) {
-      $("#dots-container .dot").removeClass("active1");
-      $("#dots-container .dot:eq(" + index + ")").addClass("active1");
-  }
-
-  $(".dot").on("click", function () {
-      const dotIndex = $(this).index();
-      currentIndex = dotIndex;
-      showSlide(dotIndex);
-      setDotActive(dotIndex);
-  });
-
-  $("#prev").on("click", function () {
-      prevSlide();
-      setDotActive(currentIndex);
-  });
-
-  $("#next").on("click", function () {
-      nextSlide();
-      setDotActive(currentIndex);
-  });
-
-  // Autoplay
-  setInterval(function () {
-      nextSlide();
-      setDotActive(currentIndex);
-  }, 3000);
-
-  // Initialize
-  showSlide(currentIndex);
-  setDotActive(currentIndex);
-</script> -->
-
-
-
-
-
-            <!-- <div id="carousel-container" >
-              <button id="prev">&lt;</button>
-
-
-              <div class="carousel">
-                <div class="carousel-item active">
-                    <img src="/images/card.png" alt="Image 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/card.png"  alt="Image 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/card.png"  alt="Image 3">
-                </div>
-            </div>
-         
-              <button id="next">&gt;</button>
-              <div id="dots-container">
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-              </div>
-          </div> -->
-          
-          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-          <!-- <script>
-              $(document).ready(function () {
-                  const carousel = $("#carousel");
-                  const slides = $(".slide");
-                  const slideWidth = $(".slide").width();
-                  let currentIndex = 0;
-                  let intervalId;
-          
-                  $("#next").on("click", function () {
-                      if (currentIndex < slides.length - 1) {
-                          currentIndex++;
-                      } else {
-                          currentIndex = 0;
-                      }
-                      updateCarousel();
-                  });
-          
-                  $("#prev").on("click", function () {
-                      if (currentIndex > 0) {
-                          currentIndex--;
-                      } else {
-                          currentIndex = slides.length - 1;
-                      }
-                      updateCarousel();
-                  });
-          
-                  $(".dot").on("click", function () {
-                      currentIndex = $(this).index();
-                      updateCarousel();
-                  });
-          
-                  function updateCarousel() {
-                      const newTransformValue = -1 * currentIndex * slideWidth;
-                      carousel.css("transform", "translateX(" + newTransformValue + "px)");
-          
-                      $(".dot").removeClass("active1");
-                      $(".dot").eq(currentIndex).addClass("active1");
-                  }
-          
-                  function startAutoSlide() {
-                      intervalId = setInterval(function () {
-                          currentIndex = (currentIndex + 1) % slides.length;
-                          updateCarousel();
-                      }, 5000);
-                  }
-          
-                  function stopAutoSlide() {
-                      clearInterval(intervalId);
-                  }
-          
-                  // تحديث السلايدر تلقائيًا كل ثانيتين
-                  startAutoSlide();
-          
-                  // إيقاف الانتقال التلقائي عند تحريك الماوس فوق الصور
-                  slides.on("mouseenter", function () {
-                      stopAutoSlide();
-                  });
-          
-                  // استئناف الانتقال التلقائي عند ترك الماوس من فوق الصور
-                  slides.on("mouseleave", function () {
-                      startAutoSlide();
-                  });
-              });
-          </script> -->
-          
-          </div>
-
-        
             </main>
-            <section>
+
+ <section1>
           <h3> Description </h3>
           <p style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84;border-radius: 15px; padding: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet.</p>
 
-            </section>
+ </section1>
 
-            <section>
+ <section2>
 
-
-
-
-              <div style="display: flex; justify-content: space-between;">
+ <div style="display: flex; justify-content: space-between;">
                 <p style="font-size: 20px; "><b> Service Add-Ons</b> </p>
                 <div style="display: flex;justify-content: center; align-items: start;">
                     <div class="checkbox-wrapper" style="display: flex;align-items: center; box-shadow: none;opacity: .8;">
@@ -915,9 +699,11 @@ justify-content: center;
                         <div style="font-size: 17px; opacity: .7; margin-left: 10px;" class="p-d"> Select All </div>
                     </div>
                 </div>
-            </div>
+ </div>
             
-            <div style="display: flex; flex-direction: column;">
+          
+ 
+ <div style="display: flex; flex-direction: column;">
                 <div class="checkbox-wrapper">
                     <div style="display: flex; align-items: center; gap: 20px;">
                         <div>
@@ -970,28 +756,21 @@ justify-content: center;
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#selectAll").change(function () {
-            const isChecked = $(this).prop("checked");
-            $("[name='items']").prop("checked", isChecked);
-        });
-    });
-</script>
+
             
             
 
 
-            </section>
+ </section2>
 
 <p style="font-size: 20px"> <b> Purchase Service</b> </p>
             <section style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:30px 20px;
              border-radius: 10px;margin: 30px auto; display: flex; align-items: center;gap: 20px; flex-wrap: wrap; ">
 
 
-<div class="count" style="background-color: #f6f6f6; padding:5px 10px ;flex-wrap: wrap;">
+<div class="count" style="background-color: #f6f6f6; padding:5px 20px ;  display: flex;justify-content: space-between; flex-wrap: wrap;">
                 
-  <button class="btn2" id="decrement">-</button>
+  <button class="btn2" id="decrement" style="margin-bottom: 10px;">-</button>
   <span id="counter" > 3</span>
   <button class="btn2" id="increment">+</button>
 </div>
@@ -1109,9 +888,7 @@ justify-content: center;
       </div>
        </div>
 
-  <!-- <div class="rating" id="rating2"></div>
-  <div class="rating" id="rating3"></div>
-   -->
+
   
 
   <form style="display: flex; flex-direction: column; ">
@@ -1196,8 +973,6 @@ justify-content: center;
 </script>
         </div>
 
-
-
             <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:5px 20px;">
               <p style="font-size:20px"><b>  Share & Earn </b> </p>
               <div style="display: flex; gap:12px;">
@@ -1249,8 +1024,6 @@ justify-content: center;
 
 </div>
 
-
-
 <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; display: flex; border-radius: 15px; flex-wrap:wrap ;gap: 10px; ">
   <img src="/images/card.png" alt="" width="150" style="border-radius: 15px 0 0 15px;">
 <div style="padding: 5px;">
@@ -1269,48 +1042,15 @@ justify-content: center;
 </div>
 
 
-            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $("#heart").click(function () {
-                        $(this).toggleClass("clicked");
-                    });
-                    $("#heart1").click(function () {
-                        $(this).toggleClass("clicked");
-                    });
-                    $("#heart2").click(function () {
-                        $(this).toggleClass("clicked");
-                    });
-
-                    
-                    $("#heart3").click(function () {
-                      $(this).toggleClass("clicked");
-                    });
-                    
-                    $("#heart2").addClass("clicked");
-                });
-            </script>
+      
             
           </section>
 
           <!-- End Right Side -->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
     
-    
-    
+
 
     <!--Start Cards -->
 
@@ -1323,6 +1063,36 @@ justify-content: center;
 
 <!-- End Cards -->
 
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/card.js"></script>
+<script src="/js/navbar.js"></script>
+
+    <!-- Start heart -->
+    <script>
+      $(document).ready(function () {
+          $("#heart").click(function () {
+              $(this).toggleClass("clicked");
+          });
+          $("#heart1").click(function () {
+              $(this).toggleClass("clicked");
+          });
+          $("#heart2").click(function () {
+              $(this).toggleClass("clicked");
+          });
+
+          
+          $("#heart3").click(function () {
+            $(this).toggleClass("clicked");
+          });
+          
+          $("#heart2").addClass("clicked");
+      });
+  </script>
+
+    <!--  End heart -->
+
 <script>
   
   let stars = 
@@ -1330,7 +1100,6 @@ justify-content: center;
   let output = 
       document.getElementById("output");
    
-  // Funtion to update rating
   function gfg(n) {
       remove();
       for (let i = 0; i < n; i++) {
@@ -1344,7 +1113,6 @@ justify-content: center;
       output.innerText = "" + n + ".1(500)";
   }
    
-  // To remove the pre-applied styling
   function remove() {
       let i = 0;
       while (i < 5) {
@@ -1355,15 +1123,11 @@ justify-content: center;
   window.onload = function () {
           gfg(4); 
         };
-              </script>
-
-
-
+ </script>
 
 <!-- Progress -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Set initial ratings to 4 and update progress bars
     setInitialRating(4);
   });
   
@@ -1377,12 +1141,10 @@ justify-content: center;
   
     const percentage = (mouseX / containerWidth) * 100;
   
-    // Ensure the percentage is within 0 to 100
     const clampedPercentage = Math.min(100, Math.max(0, percentage));
   
     progressBar.style.width = `${clampedPercentage}%`;
   
-    // Map the mouse position to a rating between 1 and 5
     const ratingValue = Math.ceil((clampedPercentage / 100) * 5);
   
     rating.textContent = ratingValue;
@@ -1402,8 +1164,6 @@ justify-content: center;
   }
   </script>
 <!-- End Progress -->
-
-
 
 <!-- Start Stars -->
 <script>
@@ -1471,9 +1231,7 @@ justify-content: center;
 <!-- End Stars -->
 
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/card.js"></script>
-<script src="/js/navbar.js"></script>
+<!--  Start counter-->
 <script>
   $(document).ready(function() {
     const counter = $("#counter");
@@ -1500,10 +1258,11 @@ justify-content: center;
   });
 </script>
 
+<!-- End counter -->
 
 
 
-
+<!-- Start carousel -->
 <script>
   let currentIndex = 0;
   const totalSlides = $("#carousel-container .carousel-item").length;
@@ -1545,16 +1304,27 @@ justify-content: center;
       setDotActive(currentIndex);
   });
 
-  // Autoplay
   setInterval(function () {
       nextSlide();
       setDotActive(currentIndex);
   }, 3000);
 
-  // Initialize
   showSlide(currentIndex);
   setDotActive(currentIndex);
 </script>
+
+<!-- End carousel -->
+
+<!-- Select All -->
+<script>
+  $(document).ready(function () {
+      $("#selectAll").change(function () {
+          const isChecked = $(this).prop("checked");
+          $("[name='items']").prop("checked", isChecked);
+      });
+  });
+</script>
+<!-- End Select All -->
 
   </body>
 </html>
