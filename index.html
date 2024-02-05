@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Cards</title>
+    <title>Kafiil</title>
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
     <style>
       body {
@@ -664,8 +666,33 @@ button.btn1:active{
               </div>
              <div style="display: flex;justify-content: space-between;">
                <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;"><img src="/images/language.png" width="20px" alt=""> Language </a> 
-               <p class="p"> العربية  <img src="/images/arabic.png" width="20px" alt=""></p>
+               <button class="p  btn6" id="languageToggle"> العربية  <img src="/images/arabic.png" width="20px" alt=""></button>
              </div>
+
+             
+<script>
+  $(document).ready(function () {
+      let isArabic = false;
+
+      $("#languageToggle").click(function () {
+          isArabic = !isArabic;
+
+          if (isArabic) {
+              $("p").text("هذا نص عينة باللغة العربية.");
+          } else {
+              // تغيير اللغة للإنجليزية
+              $("p").text("This is a sample text in English.");
+          }
+
+          // تبديل اتجاه النصوص
+          $("body").attr("dir", isArabic ? "rtl" : "ltr");
+          $("#carousel-container").attr("dir", isArabic ? "ltr" : "rtl");
+          $("nav").attr("dir", isArabic ? "ltr" : "ltr");
+      });
+  });
+</script>
+
+
 
               <a href="#" style="display: flex;align-items: center;gap: 3px; color: #000;"><img src="/images/setting.png" width="20px" alt=""> Account Settings </a>
 
@@ -677,6 +704,8 @@ button.btn1:active{
     </nav>
     
     <!-- End NavBar  -->
+
+
 
 
 
