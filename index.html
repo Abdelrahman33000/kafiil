@@ -532,7 +532,14 @@ button.btn1:active{
 
 
 
+.seebtn{
+  all: unset;
+  transition: .5s;
 
+}
+.seebtn:active{
+  scale: .9;
+}
        
         .img1{
           width: 30px;
@@ -1011,7 +1018,7 @@ button.btn1:active{
 
           <div style="display: flex;justify-content: space-between; margin-top: 10px;">
               <p style="font-size: 20px;"> <b>Seller Other Services</b></p>
-              <p style="opacity: .7;"> see more </p>
+              <button class="seebtn" style="opacity: .7;"> see more </button>
           </div>
 
             <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; display: flex;border-radius: 15px; flex-wrap: wrap;gap: px; ">
