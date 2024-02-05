@@ -28,6 +28,7 @@
   justify-content: space-between;
   align-items:center;
 }
+
  
 .star {
   font-size: 5vh;
@@ -446,7 +447,10 @@ button.btn1:active{
                 width: 100%;
                 
             }
+            
         }
+
+          
 
 
 
@@ -527,9 +531,22 @@ button.btn1:active{
         }
 
 
-    </style>
 
+
+       
         
+        @media screen and (max-width: 550px) {
+            
+            .card1 span{
+    font-size: 20px;
+            }
+            .card1 #output{
+              font-size: smaller;
+            }
+            .img1{
+              width: 1%;
+            }
+              } 
     </style>
   </head>
 
@@ -650,7 +667,7 @@ button.btn1:active{
                       4.1 (500)
                  </h3>
              </div>
-                <div><img src="/images/share.png" alt="" style="width: 30px; margin-right: 20px; ">
+                <div><img class="img1" src="/images/share.png" alt="" style="width: 30px; margin-right: 20px; ">
                   <i id="heart" class="far fa-heart fa-3x" style="font-size: 30px;"></i>
                 </div>
           </div>
