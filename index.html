@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Cards</title>
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        background-color: #fdfdfd;
+      }
+
+
+      
+.card1 {
+  background: #fff;
+  margin: 0 1rem;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+ 
+.star {
+  font-size: 5vh;
+  cursor: pointer;
+  color: #e6eaef;
+}
+ 
+.one {
+  color: rgb(255, 0, 0);
+}
+ 
+.two {
+  color: rgb(255, 106, 0);
+}
+ 
+.three {
+  color: #ffcf41
+}
+ 
+.four {
+  color: #ffcf41
+}
+ 
+.five {
+  color: rgb(24, 159, 14);
+}
+
+
+
+
+
+
+.btn1{
+background-color: #1dbf73;
+ color:#fff ;
+  padding:10px 30px;
+   border: none; 
+   border-radius: 10px;
+   width: 150px;
+   cursor: pointer;
+   transition: .5s
+}
+button.btn1:active{
+      scale: .9;
+    }
+
+
+.rating {
+      display: flex;
+      flex-direction: row-reverse;
+      /* font-size: 10px; */
+      width: fit-content;
+    }
+
+    .rating .star {
+      cursor: pointer;
+      margin: 0 5px;
+      font-size: small;
+    }
+
+    .rating .star:hover,
+    .rating .star.active {
+      color: gold;
+    }
+
+
+    
+    .progress-container {
+      width: 25%;
+      height: 20px;
+      background-color: #eee;
+      border-radius: 10px;
+      margin: 10px;
+      /* margin-right: 10px; */
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      /* width: 0; */
+      background-color: gold;
+      transition: width 0.3s ease;
+    }
+
+
+    
+    #counter {
+      font-size: 24px;
+      margin: 0 10px;
+      background-color: #ffffff;
+      margin: auto 100px;
+
+    }
+
+    button.btn2{
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #1dbf73;
+    
+    }
+  
+
+
+    #carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        #carousel {
+            display: flex;
+            transition: transform 0.6s linear;
+            position: relative;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            height: auto;
+display: flex;
+justify-content: center;
+        }
+
+        #prev, #next {
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1dbf73;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        #prev {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+
+        #dots-container {
+            text-align: center;
+            margin-top: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            z-index: 1;
+        }
+
+        .dot {
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .active1 {
+            background-color: #1dbf73;
+        }   
+        
+        
+
+
+
+        .container {
+            align-items: center;
+            padding: 20px;
+        }
+        .left {
+            flex: 1;
+        }
+        .right {
+            flex: 1;
+            text-align: right;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .checkbox-wrapper,
+        .radio-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #ffffff;
+            box-shadow: 1px 1px 10px #cfcccc89, -1px -1px 10px #cfcccc84;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .checkbox-wrapper input[type='checkbox'],
+        .radio-wrapper input[type='checkbox'] {
+            position: absolute;
+            opacity: 0;
+        }
+        .checkbox-wrapper label,
+        .radio-wrapper label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #1dbf73;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 26px;
+            cursor: pointer;
+            position: relative;
+        }
+        .checkbox-wrapper label::before,
+        .radio-wrapper label::before {
+            content: '\2713';
+            color: #fff;
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        .checkbox-wrapper input[type='checkbox']:checked + label,
+        .radio-wrapper input[type='checkbox']:checked + label {
+            background-color: #1dbf73;
+        }
+        .checkbox-wrapper input[type='checkbox']:checked + label::before,
+        .radio-wrapper input[type='checkbox']:checked + label::before {
+            opacity: 1;
+        }
+
+        .btn6 {
+            width: 80px;
+            height: 32px;
+            margin: 7px;
+            border: none;
+            color: #1dbf73;
+            transition: .5s;
+            background-color: #e9f9f1;
+            border-radius: 5px;
+        }
+        .btn6:active {
+            scale: .9;
+        }
+
+
+
+
+
+
+
+
+        #heart ,#heart1,#heart2 ,#heart3{
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        #heart.clicked,#heart1.clicked,#heart2.clicked ,#heart3.clicked {
+            color: red;
+            font-weight: bolder;
+        }
+
+    
+
+     
+        .element {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            /* border: 1px solid #ccc; */
+            margin-bottom: 5px;
+        }
+
+        .element i {
+            margin-right: 10px;
+        }
+    
+        .btn4{
+          background-color: #1dbf73; 
+          width: 100%;
+          height: 40px;
+          border: none;
+          border-radius: 10px;
+          color: #fff;
+        }
+
+
+
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 3px 3px 15px #00000071;
+            position: relative;
+        }
+
+        .logo {
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color:#000;
+            font-size: 18px;
+            position: relative;
+        }
+        .menu a:hover{
+          color: #1dbf73;
+        }
+
+        .menu a i {
+            margin-right: 5px;
+
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 10px;
+            width: 300px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+        }
+
+        .profile-dropdown a {
+            /* color: white; */
+
+            text-decoration: none !important;
+            display: block;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: rgb(184, 41, 41);
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            flex-direction: column;
+            z-index: 1;
+            box-shadow: 3px 3px 15px #000000ae;
+        }
+        .menu-dropdown a{
+          text-decoration: none;
+          color: #000;
+          padding: 10px;
+        }
+        .menu-dropdown a:hover{
+          color: #1dbf73;
+        }
+
+        .menu-dropdown.show {
+            display: flex;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu a {
+                display: none;
+            }
+     
+        }
+
+
+
+
+
+
+        .dark-mode-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .dark-mode-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+            height: 20px;
+            width: 50px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 15px;
+            width: 15px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #1dbf73;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .dark-mode-text {
+            margin-left: 10px;
+        }
+
+        .dark-mode-switch-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode-text,
+        .slider {
+            transition: 0.5s;
+        }
+
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+
+@media (max-width: 900px) {
+  .main{
+  }
+  main{
+    margin: auto;
+  }
+}
+        
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <a href="#" class="logo"><img src="/images/logo5.png" width="80px" alt=""></a>
+      <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-dropdown" id="menuDropdown">
+          <a href="#" style="display: flex;justify-content: start;align-items: center;gap: 3px;" ><div style="display: flex;justify-content: center;">
+            <img src="/images/chart1.png" alt="" width="30px"> </div> Auctions</a>
+
+
+            <a href="#"style="display: flex;justify-content: start;align-items: center;gap: 3px;" ><div style="display: flex;justify-content: center;">
+              <img src="/images/cas.png" alt="" width="30px"> </div> Contests</a>
+              <a href="#" style="display: flex;justify-content: start;align-items: center;gap: 3px;"><div style="display: flex;justify-content: center;">
+                <img src="/images/back.png" alt="" width="30px"> </div> Project</a>
+                <a href="#" style="display: flex;justify-content: start;align-items: center;gap: 3px;" ><div style="display: flex;justify-content: center;">
+                  <img src="/images/portfolio.png" alt="" width="30px"> </div> Portfolios</a>
+                  <a href="#" style="display: flex;justify-content: start;align-items: center;gap: 3px;" ><div style="display: flex;justify-content: center;">
+                    <img src="/images/users2.png" alt="" width="30px"> </div> Freelancers</a>
+                    <a href="#" style="display: flex;justify-content: start;align-items: center;gap: 3px;"><div style="display: flex;justify-content: center;">
+                      <img src="/images/message.png" alt="" width="30px"> </div> Forum </a>
+          
+        </div>
+        <ul class="menu">
+          
+            <li><a href="#" ><div style="display: flex;justify-content: center;">
+<img src="/images/chart1.png" alt="" width="30px"> </div> Auctions</a></li>
+<li><a href="#" ><div style="display: flex;justify-content: center;">
+  <img src="/images/cas.png" alt="" width="30px"> </div> Contests</a></li>
+           <li><a href="#" ><div style="display: flex;justify-content: center;">
+    <img src="/images/back.png" alt="" width="30px"> </div> Project</a></li>     
+        <li><a href="#" ><div style="display: flex;justify-content: center;">
+      <img src="/images/portfolio.png" alt="" width="30px"> </div> Portfolios</a></li>     
+          <li><a href="#" ><div style="display: flex;justify-content: center;">
+        <img src="/images/users2.png" alt="" width="41px"> </div> Freelancers</a></li>    
+             <li style="flex-grow: 1;"><a href="#" ><div style="display: flex;justify-content: center;">
+          <img src="/images/message.png" alt="" width="30px" /> </div> Forum</a></li>
+          
+          
+        </ul>
+        <div style="display: flex;gap: 10px; align-items: center;">
+          <img src="/images/notf.png" alt="" width="30px " height="30px"> 
+          <img src="/images/notf1.png" alt="" width="30px" height="30px">
+          <div class="profile-icon" id="profileIcon" style="display: flex; align-items: center;gap: 3px;">
+            
+            <img src="/images/userprof.png" width="50px" alt="">
+            <div class="profile-dropdown" id="profileDropdown">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <img src="/images/userprof.png" width="50px"  alt="">
+              <div>
+                <p> 
+                Ahmed Ali <br>
+                 <span style="opacity: .7;">Student</span> </p>
+              </div>
+            </div>
+
+
+              <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/person.png" width="20px" alt=""> My Profile </a>
+              <hr style="opacity: .5;">
+
+              <div style="display: flex;justify-content: space-between;">
+                <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/mode.png" width="20px" alt=""> Dark Mode </a> 
+                <div>
+                    
+<label class="dark-mode-switch-label">
+    <label class="dark-mode-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+    </label>
+</label>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Check if dark mode is enabled in local storage
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+        setMode(isDarkMode);
+
+        $('#darkModeToggle').change(function () {
+            // Toggle dark mode
+            const darkModeEnabled = $(this).prop('checked');
+            setMode(darkModeEnabled);
+        });
+
+        function setMode(enableDarkMode) {
+            if (enableDarkMode) {
+                $('body').addClass('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                $('body').removeClass('dark-mode');
+                localStorage.setItem('darkMode', null);
+            }
+        }
+    });
+</script>
+                  </div>
+              </div>
+
+
+             <div style="display: flex;justify-content: space-between;">
+               <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/language.png" width="20px" alt=""> Language </a> 
+               <p> العربية <img src="/images/arabic.png" width="20px" alt=""></p>
+             </div>
+
+              <a href="#" style="display: flex;align-items: center;gap: 3px;"><img src="/images/setting.png" width="20px" alt=""> Account Settings </a>
+
+              <hr style="opacity: .5;">
+              <a href="#" style="display: flex;align-items: center;gap: 3px; color:#f20e0e;"><img src="/images/logout.png" width="20px" alt=""> Logout</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Toggle menu for small screens
+            $("#menuIcon").click(function () {
+                $("#menuDropdown").toggleClass("show");
+            });
+    
+            // Toggle profile dropdown
+            $("#profileIcon").click(function () {
+                $("#profileDropdown").toggle();
+            });
+    
+            // Close menu dropdown when clicking outside
+            $(document).click(function (event) {
+                if (!event.target.closest('#menuIcon')) {
+                    $("#menuDropdown").removeClass("show");
+                }
+            });
+            
+            // Close profile dropdown when clicking outside
+            $(document).click(function (event) {
+                if (!event.target.closest('#profileIcon')) {
+                    $("#profileDropdown").hide();
+                }
+            });
+        });
+    </script>
+    
+ 
+    <div style="display: flex; justify-content:space-between;margin:10px 70px; gap: 30px; flex-wrap: wrap;" class="main">
+        <div style="width: 60%;" class="main">
+            <main  >
+           <p> Design / Logo Design </p>
+       
+            <p style="font-size: 25px; font-weight: bold;" >  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, </p>
+
+            <div class="card1" style="display: flex; justify-content: space-between;">
+             <div style="display: flex; align-items: center;">
+              <div>
+                <span onclick="gfg(1)"
+                      class="star">★
+                </span>
+                <span onclick="gfg(2)"
+                      class="star">★
+                </span>
+                <span onclick="gfg(3)"
+                      class="star">★
+                </span>
+                <span onclick="gfg(4)"
+                      class="star">★
+                </span>
+                <span onclick="gfg(5)"
+                      class="star">★
+                </span>
+                
+              </div>
+               <h3 id="output" style="opacity: .5; flex-grow: 1; margin-bottom: 5px;">
+                      4.1 (500)
+                 </h3>
+             </div>
+
+
+                <div><img src="/images/share.png" alt="" style="width: 35px; margin-right: 20px;">
+                  <i id="heart" class="far fa-heart fa-3x" style="font-size: 35px;"></i>
+                </div>
+          </div>
+
+          <div>
+
+            <div id="carousel-container">
+              <button id="prev">&lt;</button>
+              <div id="carousel">
+                  <img src="/images/slider.png" class="slide" style="width: 100%;">
+                  <img src="/images/slider.png" class="slide" style="width: 100%;">
+                  <img src="/images/slider.png" class="slide" style="width: 100%;">
+              </div>
+              <button id="next">&gt;</button>
+              <div id="dots-container">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+              </div>
+          </div>
+          
+          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+          <script>
+              $(document).ready(function () {
+                  const carousel = $("#carousel");
+                  const slides = $(".slide");
+                  const slideWidth = $(".slide").width();
+                  let currentIndex = 0;
+                  let intervalId;
+          
+                  $("#next").on("click", function () {
+                      if (currentIndex < slides.length - 1) {
+                          currentIndex++;
+                      } else {
+                          currentIndex = 0;
+                      }
+                      updateCarousel();
+                  });
+          
+                  $("#prev").on("click", function () {
+                      if (currentIndex > 0) {
+                          currentIndex--;
+                      } else {
+                          currentIndex = slides.length - 1;
+                      }
+                      updateCarousel();
+                  });
+          
+                  $(".dot").on("click", function () {
+                      currentIndex = $(this).index();
+                      updateCarousel();
+                  });
+          
+                  function updateCarousel() {
+                      const newTransformValue = -1 * currentIndex * slideWidth;
+                      carousel.css("transform", "translateX(" + newTransformValue + "px)");
+          
+                      $(".dot").removeClass("active1");
+                      $(".dot").eq(currentIndex).addClass("active1");
+                  }
+          
+                  function startAutoSlide() {
+                      intervalId = setInterval(function () {
+                          currentIndex = (currentIndex + 1) % slides.length;
+                          updateCarousel();
+                      }, 5000);
+                  }
+          
+                  function stopAutoSlide() {
+                      clearInterval(intervalId);
+                  }
+          
+                  // تحديث السلايدر تلقائيًا كل ثانيتين
+                  startAutoSlide();
+          
+                  // إيقاف الانتقال التلقائي عند تحريك الماوس فوق الصور
+                  slides.on("mouseenter", function () {
+                      stopAutoSlide();
+                  });
+          
+                  // استئناف الانتقال التلقائي عند ترك الماوس من فوق الصور
+                  slides.on("mouseleave", function () {
+                      startAutoSlide();
+                  });
+              });
+          </script>
+          
+          </div>
+
+        
+            </main>
+            <section>
+          <h3> Description </h3>
+          <p style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84;border-radius: 15px; padding: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet.</p>
+
+            </section>
+
+            <section>
+
+
+
+
+              <div style="display: flex; justify-content: space-between;">
+                <p style="font-size: 20px; "><b> Service Add-Ons</b> </p>
+                <div style="display: flex;justify-content: center; align-items: start;">
+                    <div class="checkbox-wrapper" style="display: flex;align-items: center; box-shadow: none;opacity: .8;">
+                        <input type="checkbox" id="selectAll">
+                        <label for="selectAll"></label>
+                        <div style="font-size: 17px; opacity: .7; margin-left: 10px;"> Select All </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; flex-direction: column;">
+                <div class="checkbox-wrapper">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div>
+                            <input type="checkbox" name="items" id="item1" checked>
+                            <label for="item1"></label>
+                        </div>
+                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                            ipsum
+                            dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div style="margin-left: 40px;">
+                        <button class="btn6"> $100 </button>
+                        <button class="btn6"> 2 days </button>
+                    </div>
+                </div>
+            
+                <div class="checkbox-wrapper">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div>
+                            <input type="checkbox" name="items" id="item2">
+                            <label for="item2"></label>
+                        </div>
+                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                            ipsum
+                            dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div style="margin-left: 40px;">
+                        <button class="btn6"> $100 </button>
+                        <button class="btn6"> 2 days </button>
+                    </div>
+                </div>
+            
+                <div class="checkbox-wrapper">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div>
+                            <input type="checkbox" name="items" id="item3">
+                            <label for="item3"></label>
+                        </div>
+                        <p style="font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem
+                            ipsum
+                            dolor sit amet, Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div style="margin-left: 40px;">
+                        <button class="btn6"> $100 </button>
+                        <button class="btn6"> 2 days </button>
+                    </div>
+                </div>
+            </div>
+            
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#selectAll").change(function () {
+            const isChecked = $(this).prop("checked");
+            $("[name='items']").prop("checked", isChecked);
+        });
+    });
+</script>
+            
+            </body>
+            
+
+
+            </section>
+
+<p style="font-size: 20px"> <b> Purchase Service</b> </p>
+            <section style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:30px 20px;
+             border-radius: 10px;margin: 30px auto; display: flex; align-items: center;gap: 20px; flex-wrap: wrap;">
+
+
+<div style="background-color: #f6f6f6; padding:5px 20px ; width: 50%; display: flex;justify-content: space-between;">
+                
+  <button class="btn2" id="decrement">-</button>
+  <span id="counter"> 3</span>
+  <button class="btn2" id="increment">+</button>
+</div>
+  
+<div style="background-color: #f6f6f6; padding: 10px 30px;  margin-right:auto ;">
+    <div >$<span id="amount">300</span></div>
+</div>
+  
+  <button class="btn1"> Purchase </button>
+
+</section>
+
+
+
+           <div style="align-items: center;display: flex;">
+             <img src="/images/star.png" alt="" style="width: 25px; margin: 10px;" >
+             <p style="font-size: 20px">
+                <b>  4.6 Service Rating . 46 Ratings </b>
+             </p>
+             
+           </div>
+            <section style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:30px 20px; border-radius: 10px;margin: 30px auto;">
+      
+              <div style="display: flex; align-items: center; flex-wrap: wrap;">
+<div style="display: flex;align-items: center; flex-grow: 1;">
+  <p> <b>Work Quality 5.0</b></p>  <img src="/images/star.png" alt="" style="width: 15px;height: 15px; margin: 10px;" > <span> 5.0</span>
+</div>
+
+<div class="rating" id="rating001" > </div> 
+
+<div class="progress-container" id="progressContainer1" onmousemove="updateProgress(event, 1)">
+  <div class="progress-bar" id="progressBar1"></div>
+</div>
+<div class="rating" id="rating1">1</div>
+              </div>
+
+
+              <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex;align-items: center; flex-grow: 1;">
+                  <p> <b>Communication & Collaboration</b></p>  <img src="/images/star.png" alt="" style="width: 15px;height: 15px; margin: 10px;" > <span> 5.0</span>
+                </div>
+<div class="rating" id="rating002" > </div> 
+
+
+<div class="progress-container" id="progressContainer2" onmousemove="updateProgress(event, 2)">
+  <div class="progress-bar" id="progressBar2"></div>
+</div>
+<div class="rating" id="rating2">2</div>
+              </div>
+
+<div style="display: flex; align-items: center; flex-wrap: wrap;">
+  <div style="display: flex;align-items: center; flex-grow: 1;">
+    <p> <b>Adherence to Schedule</b></p>  <img src="/images/star.png" alt="" style="width: 15px;height: 15px; margin: 10px;" > <span> 5.0</span>
+  </div>
+<div class="rating" id="rating003" > </div> 
+
+<div class="progress-container" id="progressContainer3" onmousemove="updateProgress(event, 3)">
+  <div class="progress-bar" id="progressBar3"></div>
+</div>
+<div class="rating" id="rating3">3</div>
+</div>
+
+
+            </section>
+
+
+
+
+<section style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:30px 20px; border-radius: 10px;">
+  <div>
+
+ <div style="display: flex ;align-items: start;" > 
+     <img src="/images/icon1.png" alt="" style="width: 35px; height: 35px; margin-right: 10px; margin-top: 16px;">
+     <div>
+       <p> <b> Jane Smithn</b></p>
+     <div style="display: flex;">
+    <div class="rating" id="rating01" > </div> <span style="opacity: .5;"> 30 m</span>
+       
+     </div>
+     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit.... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+   </div>
+     
+ </div>
+  </div>
+
+  <div>
+
+    <div style="display: flex ;align-items: start;" > 
+        <img src="/images/icon1.png" alt="" style="width: 35px; height: 35px; margin-right: 10px; margin-top: 16px;">
+        <div>
+          <p> <b> Jane Smithn</b></p>
+        <div style="display: flex;">
+       <div class="rating" id="rating02" > </div> <span style="opacity: .5;"> 30 m</span>
+          
+        </div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit.... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+      </div>
+        
+    </div>
+     </div>
+
+     <div>
+
+      <div style="display: flex ;align-items: start;" > 
+          <img src="/images/icon1.png" alt="" style="width: 35px; height: 35px; margin-right: 10px; margin-top: 16px;">
+          <div>
+            <p> <b> Jane Smithn</b></p>
+          <div style="display: flex;">
+         <div class="rating" id="rating03" > </div> <span style="opacity: .5;"> 30 m</span>
+            
+          </div>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit.... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nisi, cras neque Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+        </div>
+          
+      </div>
+       </div>
+
+  <!-- <div class="rating" id="rating2"></div>
+  <div class="rating" id="rating3"></div>
+   -->
+  
+
+  <form style="display: flex; flex-direction: column; ">
+    <textarea name="" id="" cols="120" rows="10" placeholder="Write your review in here" style="background-color: #f6f6f6; padding: 20px; border-radius: 10px; outline: none;"></textarea> <br> <br>
+    <button class="btn1" type="submit" > Post Review </button>
+  </form>
+</section>
+
+          </div>
+
+
+
+
+
+
+          <!-- Right Side -->
+          <section>
+           
+            <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding: 20px; border-radius: 10px; margin: 20px auto;">
+              <p style="font-size: 20px;"> <b>Seller</b> </p>
+            <div style="text-align: center;">
+                <img src="/images/user.png" alt="" width="50px" >
+            </div>
+<div style="display: flex;align-items: center;justify-content: center;gap: 5px;">
+              <p style="font-size: 20px;"> <b>Jane Smith</b></p>  <img src="/images/active.png" width="20px" alt="">
+  
+</div>          
+
+<div style="display: flex;align-items: center;justify-content: center;gap: 5px;">
+  <img src="/images/location.png" width="20px" alt=""> <span style="opacity: .7;"> Cairo, Egypt</span>
+</div>
+
+<div style="display: flex; justify-content: center;gap: 10px; margin: 20px auto;">
+  <div class="rating" id="rating004" > </div>  <span style="opacity: .7;"> 4.1 (500) </span>
+
+</div>
+<div style="display: flex;justify-content: center;gap: 20px;">
+  <img src="/images/icom5.png" alt="" width="50px">
+  <img src="/images/icon3.png" alt="" width="50px">
+  <img src="/images/icon4.png" alt="" width="50px">
+</div>
+<p> Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit. Diam <br>
+  Lorem ipsum dolor sit amet..</p>
+  <button class="btn4"> Contact Me </button>
+</div>
+
+        <div>
+
+ <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding: 20px; border-radius: 10px; margin: 20px auto;">
+           <p> <b>Info</b></p>
+  <div id="elements-container"></div>
+  
+ </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const elementsData = [
+            { iconClass: "/images/price.png", name:"Price" , name1: "$10"  },
+            { iconClass: "/images/duration.png", name:" Delivery Duration"     , name1: "1 day" },
+            { iconClass: "/images/orders.png", name:"In Progress Orders"     , name1: "2" },
+            { iconClass: "/images/customers.png",  name:"Customers"     ,name1: "2" },
+            { iconClass: "/images/sales.png",  name:"Sales"     ,name1: "$25" },
+            { iconClass: "/images/category.png",  name:"Category"     ,name1: "Design" },
+            { iconClass: "/images/category.png",  name:"Subcategory"     ,name1: "Logo Design" }
+        ];
+
+        const elementsContainer = $("#elements-container");
+
+        elementsData.map(function (element) {
+            const elementHTML = `
+                <div class="element">
+                  <div style="display: flex; align-items: center; gap:15px">
+                    <img src="${element.iconClass}" alt="" width="20px">
+                    <span>${element.name}</span>
+                     </div>
+                    <span>${element.name1}</span>
+                </div>
+            `;
+            elementsContainer.append(elementHTML);
+        });
+    });
+</script>
+        </div>
+
+
+
+            <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; padding:5px 20px;">
+              <p style="font-size:20px"><b>  Share & Earn </b> </p>
+              <div style="display: flex; gap:12px;">
+                <a href="#"> <img src="/images/Linkedin.png" alt="" width="42px"></a>
+                <a href="#"> <img src="/images/facebook.png" alt="" width="42px"></a>
+                <a href="#"> <img src="/images/wats.png" alt="" width="42px"></a>
+                <a href="#"> <img src="/images/twitter.png" alt="" width="42px"></a>
+                <a href="#"> <img src="/images/copy.png" alt="" width="42px"></a>
+              </div>
+            </div>
+
+          <div style="display: flex;justify-content: space-between; margin-top: 20px;">
+              <p style="font-size: 20px;"> <b>Seller Other Services</b></p>
+              <p style="opacity: .7;"> see more </p>
+          </div>
+            <div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; display: flex;flex-wrap: wrap; border-radius: 15px;">
+              <img src="/images/card.png" alt="" width="150" style="border-radius: 15px 0 0 15px;">
+  <div style="padding: 5px;">
+<p> Lorem ipsum dolor sit ame,<br> consecteturLorem ipsum dolor</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex;align-items: center;">
+    <img src="/images/star.png" width="20px " alt=""> <span style="opacity: .7;"> 4.9(50) </span>
+  
+</div>
+<div style="display: flex;align-items: center;"><img src="/images/icon2.png" alt="" width="20"><span> <b>  $10</b></span></div>
+<i id="heart1" class="far fa-heart fa-3x" style="font-size: 20px;"></i>
+</div>
+
+  </div>
+
+</div>
+
+<div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; display: flex;flex-wrap: wrap; margin: 20px auto;border-radius: 15px;">
+  <img src="/images/card.png" alt="" width="150"style="border-radius: 15px 0 0 15px;">
+<div style="padding: 5px;">
+<p> Lorem ipsum dolor sit ame,<br> consecteturLorem ipsum dolor</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex;align-items: center;">
+<img src="/images/star.png" width="20px " alt=""> <span style="opacity: .7;"> 4.9(50) </span>
+
+</div>
+<div style="display: flex;align-items: center;"><img src="/images/icon2.png" alt="" width="20"><span> <b>  $10</b></span></div>
+<i id="heart2" class="far fa-heart fa-3x" style="font-size: 20px;"></i>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div style="box-shadow: 1px 1px 10px #cfcccc89 ,-1px -1px 10px #cfcccc84; display: flex;flex-wrap: wrap; border-radius: 15px;">
+  <img src="/images/card.png" alt="" width="150" style="border-radius: 15px 0 0 15px;">
+<div style="padding: 5px;">
+<p> Lorem ipsum dolor sit ame,<br> consecteturLorem ipsum dolor</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex;align-items: center;">
+<img src="/images/star.png" width="20px " alt="" > <span style="opacity: .7;"> 4.9(50) </span>
+
+</div>
+<div style="display: flex;align-items: center;"><img src="/images/icon2.png" alt="" width="20"><span> <b>  $10</b></span></div>
+<i id="heart3" class="far fa-heart fa-3x" style="font-size: 20px;"></i>
+</div>
+
+</div>
+
+</div>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#heart").click(function () {
+                        $(this).toggleClass("clicked");
+                    });
+                    $("#heart1").click(function () {
+                        $(this).toggleClass("clicked");
+                    });
+                    $("#heart2").click(function () {
+                        $(this).toggleClass("clicked");
+                    });
+
+                    
+                    $("#heart3").click(function () {
+                      $(this).toggleClass("clicked");
+                    });
+                    
+                    $("#heart2").addClass("clicked");
+                });
+            </script>
+            
+          </section>
+
+          <!-- End Right Side -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    
+    
+
+    <!--Start Cards -->
+
+    <div  style=" display: flex; justify-content: space-between; padding: 0 70px; "> 
+        <h3 style="margin-right: 20px;">Suggested Services</h3>
+        <p style="opacity: .7; font-size: 20px; "> see more </p>  
+    </div>
+    <div id="cards-container" ></div>
+
+
+<!-- End Cards -->
+
+<script>
+  
+  let stars = 
+      document.getElementsByClassName("star");
+  let output = 
+      document.getElementById("output");
+   
+  // Funtion to update rating
+  function gfg(n) {
+      remove();
+      for (let i = 0; i < n; i++) {
+          if (n == 1) cls = "one";
+          else if (n == 2) cls = "two";
+          else if (n == 3) cls = "three";
+          else if (n == 4) cls = "four";
+          else if (n == 5) cls = "five";
+          stars[i].className = "star " + cls;
+      }
+      output.innerText = "" + n + ".1(500)";
+  }
+   
+  // To remove the pre-applied styling
+  function remove() {
+      let i = 0;
+      while (i < 5) {
+          stars[i].className = "star";
+          i++;
+      }
+  }
+  window.onload = function () {
+          gfg(4); 
+        };
+              </script>
+
+
+
+
+<!-- Progress -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Set initial ratings to 4 and update progress bars
+    setInitialRating(4);
+  });
+  
+  function updateProgress(event, barNumber) {
+    const progressContainer = document.getElementById(`progressContainer${barNumber}`);
+    const progressBar = document.getElementById(`progressBar${barNumber}`);
+    const rating = document.getElementById(`rating${barNumber}`);
+  
+    const containerWidth = progressContainer.offsetWidth;
+    const mouseX = event.clientX - progressContainer.getBoundingClientRect().left;
+  
+    const percentage = (mouseX / containerWidth) * 100;
+  
+    // Ensure the percentage is within 0 to 100
+    const clampedPercentage = Math.min(100, Math.max(0, percentage));
+  
+    progressBar.style.width = `${clampedPercentage}%`;
+  
+    // Map the mouse position to a rating between 1 and 5
+    const ratingValue = Math.ceil((clampedPercentage / 100) * 5);
+  
+    rating.textContent = ratingValue;
+  }
+  
+  function setInitialRating(rating) {
+    for (let i = 1; i <= 3; i++) {
+      const progressBar = document.getElementById(`progressBar${i}`);
+      const ratingElement = document.getElementById(`rating${i}`);
+  
+      // Set progress bar width based on initial rating
+      progressBar.style.width = `${(rating / 5) * 100}%`;
+  
+      // Set the rating value
+      ratingElement.textContent = rating;
+    }
+  }
+  </script>
+<!-- End Progress -->
+
+
+
+<!-- Start Stars -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const rating01 = document.getElementById("rating01");
+    const rating02 = document.getElementById("rating02");
+    const rating03 = document.getElementById("rating03");
+    const rating001 = document.getElementById("rating001");
+    const rating002 = document.getElementById("rating002");
+    const rating003 = document.getElementById("rating003");
+    const rating004 = document.getElementById("rating004");
+  
+    const ratings = [rating01, rating02, rating03 ,rating001, rating002, rating003  , rating004];
+  
+    for (let i = 0; i < ratings.length; i++) {
+      createRating(ratings[i]);
+    }
+  
+    function createRating(rating) {
+      for (let i = 5; i > 0; i--) {
+        const star = document.createElement("span");
+        star.className = "star";
+        star.setAttribute("data-value", i);
+        star.innerHTML = '<i class="fas fa-star"></i>';
+        rating.appendChild(star);
+  
+        star.addEventListener("click", function () {
+          const value = this.getAttribute("data-value");
+          setActiveStars(rating, value);
+        });
+  
+        star.addEventListener("mouseover", function () {
+          const value = this.getAttribute("data-value");
+          setActiveStars(rating, value);
+        });
+  
+        star.addEventListener("mouseout", function () {
+          const value = this.getAttribute("data-value");
+          resetActiveStars(rating, value);
+        });
+      }
+  
+      // Set first 4 stars as active by default
+      setActiveStars(rating, 4);
+    }
+  
+    function setActiveStars(rating, value) {
+      const stars = rating.getElementsByClassName("star");
+      for (let i = 0; i < stars.length; i++) {
+        const starValue = stars[i].getAttribute("data-value");
+        stars[i].classList.toggle("active", starValue <= value);
+      }
+    }
+  
+    function resetActiveStars(rating, value) {
+      const stars = rating.getElementsByClassName("star");
+      for (let i = 0; i < stars.length; i++) {
+        const starValue = stars[i].getAttribute("data-value");
+        stars[i].classList.toggle("active", starValue <= value);
+      }
+    }
+  });
+  </script>
+  
+<!-- End Stars -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/card.js"></script>
+<script>
+  $(document).ready(function() {
+    const counter = $("#counter");
+    const amountSpan = $("#amount");
+
+    let value = parseInt(counter.text());
+
+    $("#decrement").on("click", function() {
+      if (value > 0) {
+        value--;
+        updateCounterAndAmount();
+      }
+    });
+
+    $("#increment").on("click", function() {
+      value++;
+      updateCounterAndAmount();
+    });
+
+    function updateCounterAndAmount() {
+      counter.text(value);
+      amountSpan.text(value * 100);
+    }
+  });
+</script>
+
+
+  </body>
+</html>
