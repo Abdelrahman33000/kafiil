@@ -24,26 +24,32 @@ $(document).ready(function () {
 
 // mode
 
-// $(document).ready(function () {
-//     const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+$(document).ready(function () {
+    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
 
-//     setMode(isDarkMode);
+    setMode(isDarkMode);
 
-//     $('#darkModeToggle').change(function () {
-//         const darkModeEnabled = $(this).prop('checked');
-//         setMode(darkModeEnabled);
-//     });
+    $('#darkModeToggle').change(function () {
+        const darkModeEnabled = $(this).prop('checked');
+        setMode(darkModeEnabled);
+    });
 
-//     function setMode(enableDarkMode) {
-//         if (enableDarkMode) {
-//             $('body').addClass('dark-mode');
-//             localStorage.setItem('darkMode', 'enabled');
-//         } else {
-//             $('body').removeClass('dark-mode');
-//             localStorage.setItem('darkMode', null);
-//         }
-//     }
-// });
+    function setMode(enableDarkMode) {
+        if (enableDarkMode) {
+            $('body').addClass('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            $('body').removeClass('dark-mode');
+            localStorage.setItem('darkMode', null);
+        }
+    }
+});
+
+
+
+
+
+
 
 
 $(document).ready(function () {
@@ -71,5 +77,7 @@ $(document).ready(function () {
         const isDarkModeOnLoad = localStorage.getItem('darkMode') === 'enabled';
         $('#darkModeToggle').prop('checked', isDarkModeOnLoad);
         setMode(isDarkModeOnLoad);
+            gfg(4);
+         
     };
 });
